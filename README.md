@@ -23,14 +23,17 @@ This project focuses on:
 
 ## Tech Stack
 
-- **Python**
-  - Pandas
-  - NumPy
-  - Matplotlib
-  - Seaborn
-- **Power BI**
-- **Git & GitHub**
-- **Excel / CSV**
+- **Python** – core programming language
+- **Pandas & NumPy** – data manipulation and numerical processing
+- **Scikit-learn** – Decision Tree and tuned Random Forest model training and evaluation
+- **Joblib** – saving and loading the trained Random Forest model
+- **Streamlit** – interactive web application and user interface
+- **Plotly** – interactive charts in the Streamlit application
+- **Matplotlib & Seaborn** – exploratory analysis and model evaluation visualizations
+- **OpenPyXL** – reading Excel workbooks
+- **Power BI** – interactive business intelligence dashboard
+- **Git & GitHub** – version control and project hosting
+- **CSV / Excel** – dataset storage and input formats
 
 ---
 
