@@ -1,0 +1,11 @@
+CustomerId,Surname,CreditScore,Geography,Gender,Age,Tenure,EstimatedSalary,Balance,NumOfProducts,HasCrCard,IsActiveMember,Exited,AgeGroup,CreditScoreGroup,BalanceGroup
+910001,Sharma,620,France,Female,29,4,58000.0,0.0,2,1,1,0,18-30,601-700,0-50K
+910002,Patel,540,Germany,Male,51,2,118000.0,132000.0,1,1,0,0,51-60,500-600,100-150K
+910003,Mehta,735,Spain,Female,37,8,92000.0,76000.0,2,1,1,0,31-40,701-800,50-100K
+910004,Verma,480,Germany,Female,46,3,143000.0,148000.0,3,0,0,0,41-50,<500,100-150K
+910005,Iyer,815,France,Male,63,9,67000.0,42000.0,2,1,1,0,61+,801+,0-50K
+910006,Khan,595,Germany,Male,56,1,155000.0,178000.0,1,0,0,0,51-60,500-600,150K+
+910007,Desai,680,Spain,Female,42,6,81000.0,105000.0,2,1,1,0,41-50,601-700,100-150K
+910008,Rao,505,France,Male,34,5,46000.0,115000.0,1,0,0,0,31-40,500-600,100-150K
+910009,Joshi,765,Germany,Female,27,7,102000.0,25000.0,2,1,1,0,18-30,701-800,0-50K
+910010,Nair,560,Spain,Male,59,0,132000.0,152000.0,1,1,0,0,51-60,500-600,150K+
