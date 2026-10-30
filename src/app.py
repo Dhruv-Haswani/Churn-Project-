@@ -69,7 +69,6 @@ page = st.sidebar.radio(
     "Navigation",
     [
         "Dashboard",
-        "Dataset Explorer",
         "Churn Prediction",
         "Model Evaluation",
         "Business Insights"
@@ -137,78 +136,7 @@ if page == "Dashboard":
         st.write("1 = Churned")
 
 # =====================================================
-# 7. DATASET EXPLORER
-# =====================================================
-
-elif page == "Dataset Explorer":
-
-    st.title("📊 Dataset Explorer")
-
-    st.write("Explore the existing cleaned dataset or upload another dataset.")
-
-    uploaded_file = st.file_uploader(
-        "Upload CSV or Excel file",
-        type=["csv", "xlsx"]
-    )
-
-    if uploaded_file:
-
-        try:
-            if uploaded_file.name.lower().endswith(".csv"):
-                uploaded_df = pd.read_csv(uploaded_file)
-            else:
-                uploaded_df = pd.read_excel(uploaded_file)
-
-            st.success("Dataset uploaded successfully!")
-
-            st.metric("Rows", uploaded_df.shape[0])
-            st.metric("Columns", uploaded_df.shape[1])
-
-            st.subheader("Dataset Preview")
-
-            st.dataframe(
-                uploaded_df.head(100),
-                use_container_width=True
-            )
-
-            st.subheader("Data Quality")
-
-            quality_col1, quality_col2 = st.columns(2)
-
-            quality_col1.metric(
-                "Missing Values",
-                int(uploaded_df.isnull().sum().sum())
-            )
-
-            quality_col2.metric(
-                "Duplicate Rows",
-                int(uploaded_df.duplicated().sum())
-            )
-
-        except Exception as e:
-            st.error(f"Unable to read the uploaded file: {e}")
-
-    else:
-
-        st.info("Showing the existing cleaned dataset.")
-
-        st.dataframe(
-            df.head(100),
-            use_container_width=True
-        )
-
-    st.subheader("Column Information")
-
-    column_info = pd.DataFrame({
-        "Column": df.columns,
-        "Data Type": df.dtypes.astype(str).values,
-        "Missing Values": df.isnull().sum().values
-    })
-
-    st.dataframe(column_info, use_container_width=True)
-
-# =====================================================
-# 8. CHURN PREDICTION
+# 7. CHURN PREDICTION
 # =====================================================
 
 elif page == "Churn Prediction":
@@ -363,7 +291,7 @@ elif page == "Churn Prediction":
         )
 
 # =====================================================
-# 9. MODEL EVALUATION
+# 8. MODEL EVALUATION
 # =====================================================
 
 elif page == "Model Evaluation":
@@ -421,7 +349,7 @@ elif page == "Model Evaluation":
             )
 
 # =====================================================
-# 10. BUSINESS INSIGHTS
+# 9. BUSINESS INSIGHTS
 # =====================================================
 
 elif page == "Business Insights":
