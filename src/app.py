@@ -69,6 +69,7 @@ page = st.sidebar.radio(
     "Navigation",
     [
         "Dashboard",
+        "Dataset Explorer",
         "Churn Prediction",
         "Model Evaluation",
         "Business Insights"
@@ -136,7 +137,37 @@ if page == "Dashboard":
         st.write("1 = Churned")
 
 # =====================================================
-# 7. CHURN PREDICTION
+# 7. DATASET EXPLORER
+# =====================================================
+
+elif page == "Dataset Explorer":
+
+    st.title("📊 Dataset Explorer")
+    st.write("Explore the cleaned dataset used in this bank customer churn case study.")
+
+    st.info("This page displays the existing cleaned case-study dataset. Dataset uploads are disabled.")
+
+    st.dataframe(df.head(100), use_container_width=True)
+
+    st.subheader("Dataset Overview")
+
+    col1, col2, col3 = st.columns(3)
+    col1.metric("Total Records", f"{df.shape[0]:,}")
+    col2.metric("Total Columns", f"{df.shape[1]}")
+    col3.metric("Missing Values", f"{df.isnull().sum().sum():,}")
+
+    st.subheader("Column Information")
+
+    column_info = pd.DataFrame({
+        "Column": df.columns,
+        "Data Type": df.dtypes.astype(str).values,
+        "Missing Values": df.isnull().sum().values
+    })
+
+    st.dataframe(column_info, use_container_width=True)
+
+# =====================================================
+# 8. CHURN PREDICTION
 # =====================================================
 
 elif page == "Churn Prediction":
@@ -291,7 +322,7 @@ elif page == "Churn Prediction":
         )
 
 # =====================================================
-# 8. MODEL EVALUATION
+# 9. MODEL EVALUATION
 # =====================================================
 
 elif page == "Model Evaluation":
@@ -349,7 +380,7 @@ elif page == "Model Evaluation":
             )
 
 # =====================================================
-# 9. BUSINESS INSIGHTS
+# 10. BUSINESS INSIGHTS
 # =====================================================
 
 elif page == "Business Insights":
