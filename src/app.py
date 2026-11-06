@@ -83,7 +83,7 @@ page = st.sidebar.radio(
 if page == "Dashboard":
 
     st.title("🏦 Bank Customer Churn Prediction")
-    st.write("Data Mining and Business Intelligence – CA2")
+    st.write("Customer Churn Predictor")
 
     st.markdown("---")
 
@@ -145,7 +145,7 @@ elif page == "Dataset Explorer":
     st.title("📊 Dataset Explorer")
     st.write("Explore the cleaned dataset used in this bank customer churn case study.")
 
-    st.info("This page displays the existing cleaned case-study dataset. Dataset uploads are disabled.")
+    st.info("Cleaned Dataset Information.")
 
     st.dataframe(df.head(100), use_container_width=True)
 
